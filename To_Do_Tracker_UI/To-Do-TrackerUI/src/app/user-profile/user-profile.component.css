@@ -1,0 +1,71 @@
+.example-card {
+   
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    padding-left: 120px; 
+    
+}
+img{
+  
+    width: 250px;
+
+    border: 1px solid;
+    border-radius: 80%;
+}
+strong{
+    margin-top: 1%;
+    margin-left: 6%;
+    display: flex;
+    justify-content: center;
+    color:rgb(20, 55, 121);
+    font-family: 'Linux Libertine','Georgia','Times',serif;
+    font-weight:bolder;
+}
+.detail{
+    letter-spacing: 1px;
+    padding-left: 25px;
+    color: #000;
+}
+
+.bg{
+    background-image: url('../../assets/blue\ grid-1.png');
+    background-size: cover; /* This ensures the image covers the entire background */
+    /* padding: 5%; */
+    margin: 0;
+    height: 100vh; /* Adjust the height as needed */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+/* mat-icon{
+    margin-left: 38%;
+    margin-top: 15%;
+    color:white;
+} */
+mat-card-subtitle{
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding-left: 25px;
+    color: #000;
+}
+/* .mat-chip{
+    color:blue;
+    padding: 10px;
+    margin-left: 30%;
+    border-radius: 25%;
+
+} */
+.mat-chip {
+    background-color: rgb(20, 55, 121); /* Set chip background color to blue */
+    color: white; /* Set chip text color to white */
+    display: inline-flex; /* Ensure chip and icon are displayed inline */
+    align-items: center; /* Align chip content vertically */
+    margin-left: 30%;
+}
+
+.mat-icon {
+    color: white !important; /* Set icon color to white */
+    margin-right: 4px; /* Adjust icon margin if needed */
+}
+

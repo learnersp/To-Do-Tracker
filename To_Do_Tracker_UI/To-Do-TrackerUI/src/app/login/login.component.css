@@ -1,0 +1,243 @@
+body::before {
+  content: url('../../assets/cloud\ bg.jpg');
+  display: none;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+   overflow-y: hidden; /* Hide vertical scrollbar */
+   background-color: #1C356A;
+}
+
+.outerdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(120deg, #1C356A, #507AAD, #78A8D4, #A4C1E1, #c1cee9, #EFF2F7); /* Updated Gradient colors */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  background-size: 600% 100%; /* Adjust background size for animation */
+  animation: gradient-animation 10s linear infinite; /* Adjust animation duration */
+}
+
+/* Adjust animation to smoothly shift gradient colors */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
+  border-radius: 16px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  animation: slide-up 0.5s ease-out;
+  width: 100%;
+}
+
+
+
+/* Adjust the paths and sizing of the images */
+.image-left {
+  position: fixed;
+  left: 20px; /* Adjust the left positioning */
+  bottom: 400px; /* Adjust the bottom positioning */
+  width: 350px; /* Adjust the width */
+  opacity: 1; /* Adjust the opacity */
+  animation: float-animation 4s ease-in-out infinite; /* Animation */
+}
+
+.image-right {
+  position: fixed;
+  right: 60px; /* Adjust the right positioning */
+  bottom: 60px; /* Adjust the bottom positioning */
+  width: 250px; /* Adjust the width */
+  opacity: 1; /* Adjust the opacity */
+  animation: float-animation 4s ease-in-out infinite; /* Animation */
+}
+
+/* Animation for floating effect */
+@keyframes float-animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the floating distance */
+  }
+}
+
+
+
+
+
+
+
+
+.logindiv {
+  width: 100%;
+  max-width: 350px;
+}
+
+.heading-border {
+  background-color: #1C356A; 
+  border-radius: 8px; 
+  padding: 20px; 
+  margin-bottom: 30px;
+  margin-left: -30px;
+  margin-top: -30px;
+  margin-right: -30px;
+}
+
+
+
+/* .login-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1C356A;
+  margin-top: 0px;
+ 
+} */
+
+.login-heading {
+  color: white; /* Set text color */
+  text-align: center; /* Center-align text */
+  margin: 0; /* Remove default margin */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: -8px; /* Adjust margin top */
+  margin-bottom: 20px; /* Adjust margin bottom */
+}
+
+.sign-in-button {
+  width: 100%; /* Stretch button to left and right */
+  padding: 15px 15px; /* Add padding to the top and bottom */
+  position: relative; /* Position relative for pseudo-element */
+  overflow: hidden; /* Hide overflowing pseudo-element */
+}
+
+.sign-in-button::before {
+  content: ""; /* Add pseudo-element */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Initial position off the button */
+  width: 100%; /* Initial width */
+  height: 100%;
+  background-color: #1C356A; /* Loading bar color */
+  transition: left 1s ease-in-out; /* Smooth transition for left movement */
+}
+
+.sign-in-button:hover::before {
+  left: 0; /* Move pseudo-element to the left (show loading bar) */
+}
+
+/* Disable pointer events on button when disabled */
+.sign-in-button:disabled::before {
+  display: none; /* Hide loading bar when button is disabled */
+}
+
+
+
+#alreadyUserSpan {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#alreadyUserSpan a {
+  color: #1C356A;
+  font-weight: 800;
+  font-size: 10px;
+  cursor: pointer; /* Add this line to change cursor to pointer */
+  margin-left: 5px; /* Adjust spacing as needed */
+}
+
+
+.signup-link {
+  color: #1C356A; /* Change to your desired text color */
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer; 
+  transition: background-color 0.3s; /* Add smooth transition effect */
+}
+
+.signup-link:hover {
+  background-color: #1C356A; /* Change to your desired background color */
+  color: #FFFFFF; /* Change to your desired text color when hovered */
+  padding: 8px 12px; /* Add padding for button-like appearance */
+  border-radius: 4px; /* Add border radius for rounded corners */
+}
+
+
+
+
+@keyframes slide-up {
+  from {
+      transform: translateY(40%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0px);
+      opacity: 5;
+      /* opacity: 10; */
+  }
+}
+
+/* @keyframes slide-up {
+  from {
+    transform: translateY(50px) scale(0.8) rotateX(-20deg); 
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0) scale(1.1) rotateX(0deg); 
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0) scale(1) rotateX(0deg); 
+    opacity: 1;
+  }
+} */
+
+.error-message {
+  display: inline;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color:#1C356A; /* Change to your desired color */
+  /* border-width: 2px; */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-start,
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-color:#1C356A; /* Change to your desired color */
+  /* border-width: 2px; */
+}

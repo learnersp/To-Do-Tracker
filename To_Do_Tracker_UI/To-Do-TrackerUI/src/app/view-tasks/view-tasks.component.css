@@ -1,0 +1,435 @@
+/* Card css */
+/* ====================================================== */
+.card {
+  width: 85%;
+  /* width: 300px; */
+  height: 80%;
+  margin-left: 20%;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  right: 10%;
+  bottom: 10%;
+  background-color: aliceblue;
+  box-shadow: 6px 6px 3px 0px rgba(69, 68, 68, 0.75);
+}
+
+.mat-grid-tile {
+  display: flex;
+  justify-content: center
+}  
+
+#title {
+  font-size: xx-large;
+  margin-left: 20px;
+}
+
+/* task name bg */
+.taskName {
+  background-color: #ffffff;
+  /* color: rgb(255, 255, 255);  */
+  color: rgb(9, 9, 9); 
+  font-weight: 450;
+  font-size: 22px;
+  padding: 5px 10px; 
+  border-radius: 6px; /* Optional: Add border-radius for rounded corners */
+  margin-bottom: 15px;
+}
+/* 
+.priority-low {
+background-color: #7a9ee6; 
+}
+
+.priority-medium {
+background-color: #c580e3; 
+}
+
+.priority-high {
+background-color: #f9a62a; 
+}
+
+.priority-urgent {
+background-color: #f95454; 
+}
+
+.priority-default {
+background-color: #333; 
+} */
+
+
+.footer{
+display: flex;
+justify-content: space-evenly;
+height: 60px;
+margin-top: 10px;
+
+}
+
+/* ====================================================== */
+
+/* date chip */
+/* button{
+  margin-left: -13.5px;
+  margin-right: 2px;
+} */
+
+
+#chip {
+  margin-left: -10px;
+  margin-right: 0px;
+  margin-bottom: 0%;
+  background-color: rgb(255, 255, 255);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: black;
+
+}
+
+.date {
+  position: relative;
+  bottom: 1px;
+  top: 9px;
+  display: flex;
+  float: left;
+  font-size: 1px;
+  justify-content: space-around;
+  float: left;
+ }
+
+strong {
+  display: inline;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  border-radius: 7px;
+}
+
+/* ============================================================== */
+
+#addicon {
+  margin-top: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addIcon{
+  font-size: 600%;
+  width: 100%;
+  height: 100%;
+}
+
+.low {
+  background-color: rgb(49, 228, 49);
+}
+
+.medium {
+  background-color: rgb(241, 241, 0);
+}
+
+.high {
+  background-color: #f8cf69;
+}
+
+.critical {
+  background-color: #f77777;
+}
+
+
+mat-card-title {
+  display: flex;
+  font-weight: bold;
+  font-size:29px;
+  letter-spacing: 0.5px;
+  justify-content: space-around;
+  padding: 6px;
+  word-wrap: break-word;
+  font-family: serif;
+}
+
+/* mat-card-subtitle{
+  font-family: system-ui;
+  font-weight: 600;
+  font-size:22px;
+} */
+
+mat-card-content {
+  display: inline;
+  /* display:block; */
+  height: 200px;
+  font-family: Arial;
+  /* font-family:Roboto; */
+  /* font-weight: 500; */
+  font-size: 18px;
+  overflow-y: auto;
+}
+
+
+
+#divider {
+  border-radius: 15px;
+  height: 5px;
+}
+
+mat-progress-bar{
+  border-radius: 15px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+}
+
+
+
+h6 {
+  display: inline;
+  background-color: rgb(47, 221, 221);
+  padding: 10px;
+  border-radius: 15px;
+
+}
+
+.cat {
+  float: left;
+  margin-top: 10px;
+}
+
+.cont {
+  margin: 2px
+}
+.heading{
+  margin-left: 6%;
+  width: 20%;
+  display: inline-block;
+  color: white;
+  /* background-color:rgb(20, 55, 121); */
+  font-family: 'Linux Libertine','Georgia','Times',serif;
+  font-weight:bolder;
+ 
+
+}
+
+.headerMid{
+  width: 200%;
+}
+
+.headerRight{
+  width: 10%;
+}
+.priorityCard{
+  width: 390px;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+.prioritySpan{
+  display: inline-block;
+  width: 20%;
+  margin-left: 45%;
+  
+ 
+  position: relative;
+  bottom: 6%;
+}
+#lowChip{
+  background-color: #D4E4ED;
+}
+#mediumChip{
+  background-color: #C5B1F7;
+}
+#highChip{
+  background-color: #f8cf69;
+}
+#urgentChip{
+  background-color: #f77777;
+}
+
+
+
+
+/* Additional CSS for three-dot menu */
+/* .mat-menu-item {
+display: flex;
+align-items: center;
+}
+
+.mat-menu-item mat-icon {
+margin-right: 8px;
+} */
+
+/* Adjusting the position of the three-dot menu */
+.menu-button {
+margin-right: -35px; /* Adjust this value as needed */
+}
+
+/* CSS for menu animation */
+.custom-menu {
+transform-origin: top center;
+opacity: 0; /* Initially hide the menu */
+max-height: 0; /* Initially set max-height to 0 */
+overflow: hidden; /* Hide overflow content */
+transition: max-height 0.3s ease, opacity 0.3s ease; /* Apply transition */
+}
+
+.menu-opened .custom-menu {
+max-height: 200px; /* Set a maximum height for the menu */
+opacity: 1; /* Make the menu visible */
+}
+
+
+/* ================================================================ */
+
+.light-urgent {
+  background-color: #f77777; /* Light red for critical priority */
+}
+
+.light-high {
+  background-color: #f8cf69; /* Light orange for high priority */
+}
+
+.light-medium {
+  background-color:  #C5B1F7; /* Light yellow for medium priority */
+}
+
+.light-low {
+  background-color:  #D4E4ED; /* Light green for low priority */
+}
+
+/* ======================================================================= */
+
+/* dotted bg using img */
+/* .bg{
+  background-image: url('../../assets/blue\ grid-1.png');
+  background-size: cover; 
+  margin: 0;
+  height: 200vh; 
+  background-color:#DEECF9;
+} */
+
+
+
+/* dotted bg using css code (use this evry component to add this bg and chnage color) */
+
+
+.bg {
+background-color: rgb(255, 255, 255); 
+padding: 0%; 
+margin: 0;
+height: 200vh; 
+background-image:
+  radial-gradient(circle, #1b629d 8%, transparent 0%),
+  radial-gradient(circle, #ffffff 8%, transparent 0%);
+background-size: 20px 20px; 
+background-position: 0 0, 10px 10px; 
+}
+
+
+/* ======================================================================= */
+
+/* category work/personal css */
+/* CSS */
+/* CSS */
+
+
+.custom-chip {
+display: inline-flex;
+align-items: center;
+background-color: #ffffff; /* Adjust chip background color */
+color: #000000; /* Adjust chip text color */
+border: 1px solid #b1b1b1; /* Adjust chip border color */
+padding-bottom: -20px;
+padding-top: 5px;
+padding-left: 1px;
+padding-right: 5px;
+border-radius: 20px; /* Adjust chip border radius */
+
+margin-top: 10px; /* Adjust top margin */
+margin-bottom: 12px;
+margin-left: -18px;
+font-size: 14px; /* Adjust font size */
+
+}
+
+.custom-icon {
+margin-right: 4px; /* Adjust icon right margin */
+font-size: 18px; /* Adjust icon size */
+}
+
+.custom-span {
+flex-grow: 0; /* Allow the text to grow to fill available space */
+padding-bottom:5px;
+font-weight: 500;
+}
+
+.custom-chip:hover {
+background-color: #f0f0f0; /* Change chip background color on hover */
+cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+/* =================================================================== */
+/* Extra feature */
+
+/* Additional CSS for full card content */
+
+/* Additional CSS for full card content */
+.full-card {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 1000;
+width: 100%;
+max-width: 500px;
+/* height: 80%;
+max-height: 80vh; */
+overflow-y: auto;
+min-height: 300px;
+padding-top: 45px;
+}
+
+/* Ensure full card appears above other content */
+.card-content {
+cursor: pointer;
+}
+
+.close-button {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: rgb(255, 255, 255);
+padding: 5px 10px; /* Adjust padding as needed */
+border: none;
+cursor: pointer;
+}
+
+.close-button span {
+color: rgb(46, 126, 223);
+font-weight: 500;
+
+}
+
+/* full card content size */
+.full-card mat-card-content {
+font-size: 20px;
+}
+
+/* Apply the background color of the clicked card to the full card */
+.light-low {
+background-color: #D4E4ED; /* Light green for low priority */
+}
+
+.light-medium {
+background-color:  #C5B1F7; /* Light yellow for medium priority */
+}
+
+.light-high {
+background-color: #f8cf69; /* Light orange for high priority */
+}
+
+.light-urgent {
+background-color: #f77777; /* Light red for critical priority */
+}

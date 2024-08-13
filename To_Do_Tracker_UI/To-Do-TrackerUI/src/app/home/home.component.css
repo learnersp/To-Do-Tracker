@@ -1,0 +1,876 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parallax {
+  /* The image used */
+  /* background-image: url('../../assets/bp-sticky-notes_cover-s.webp'); */
+
+  background-image: url('../../assets/team\ work.webp');
+
+  
+
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  /* Adjust the height of the background image */
+  height: 74vh; 
+}
+
+
+/* to adjust the transparency of bg img */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Adjust the opacity as needed */
+  /* background-color: rgba(0, 0, 0, 0.629);  */
+  background-color: rgba(14, 14, 14, 0.821);
+}
+
+/* @keyframes changeBackground {
+  0%, 100% { background-image: url('../../assets/team\ work.webp'); }
+  25% { background-image: url('../../assets/bp-sticky-notes_cover-s.webp'); }
+  50% { background-image: url('../../assets/team\ work.webp'); }
+  75% { background-image: url('../../assets/bp-sticky-notes_cover-s.webp'); }
+}
+
+.parallax {
+  background-image: url('../../assets/team\ work.webp');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 74vh;
+  animation: changeBackground 10s infinite;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 14, 14, 0.821);
+} */
+
+.rocket {
+  /* float: left; */
+  position: absolute;
+  /* margin-left: -20px; */
+  margin-left: -640px;
+  /* top: 16%;  */
+  top: 12%; 
+  transform: translateY(-50%);
+  width: 600px; /* Adjust the width of the rocket */
+  width: 120px;
+  /* width: 100px;  */
+  height: auto;
+}
+
+.heading {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 48px;
+  margin-left: -35rem;
+  margin-bottom: 30px;
+}
+
+.heading h2 {
+  font-size: 36px;
+  margin-left: -35rem;
+  margin-bottom: 30px;
+}
+
+.heading p {
+  font-size: 24px;
+  margin-left: -35rem;
+}
+
+.additional-image {
+  position: absolute;
+  top: 23%; /* Adjust as needed */
+  right: 8%; /* Adjust as needed */
+  transition: transform 0.3s ease; 
+}
+
+.additional-image:hover {
+  transform: scale(1.1); /* Zoom in effect upon hover */
+}
+
+/* ============================================================================================================================================== */
+
+
+.cta-button {
+  position: absolute;
+  left: 31%;
+  bottom: 23%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  padding: 30px 30px;
+  font-size: 20px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-color: #1976d2; /* Set primary color */
+  color: #fff; /* Text color */
+  border: 2px solid transparent; /* Set transparent border */
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%; /* Start shine effect from left */
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 70%); /* Change white color for shine effect */
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.cta-button:hover::before {
+  top: -25%; /* Adjust the shine position */
+  left: 100%; /* Move shine effect to right */
+  animation: shine 1.5s infinite; /* Start shine animation on hover */
+}
+
+@keyframes shine {
+  0% {
+    transform: scale(0.5) translateX(-150%); /* Start with smaller size and move from left */
+  }
+  50% {
+    transform: scale(1.2) translateX(0); /* Grow in size and reach center */
+  }
+  100% {
+    transform: scale(0.5) translateX(150%); /* Shrink back to smaller size and move to right */
+  }
+}
+
+.cta-button:hover {
+  border-color: #fff; /* Change border color on hover */
+}
+
+
+
+
+
+/* ============================================================================================================================================== */
+
+/* Remainder of your CSS remains unchanged */
+
+
+.content {
+  background-color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 20px; */
+  padding-top: 10px;
+  /* padding-bottom: 30px; */
+  height: 100vh;
+}
+
+
+
+.content1 {
+  background-color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 20px; */
+  padding-top: 10px;
+  /* padding-bottom: 30px; */
+  height: 50vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.parallax2 {
+  /* The image used */
+  background-image: url('../../assets/blue\ grid\ sixe\ fiexd-1.png');
+  
+
+  /* Full height */
+  height: 60vh; 
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Adjust the height of the background image */
+  /* height: 74vh;  */
+}
+
+
+
+/* Remainder of your CSS remains unchanged */
+
+footer {
+  /* background-color: #333; */
+  background-color: #1a3664;
+  color: white;
+  text-align: center;
+  padding: 40px 0; /* Increased padding for the footer */
+}
+
+/* Added styles for the additional content within the footer */
+footer p {
+  margin: 10px 0; /* Adjust spacing between paragraphs */
+}
+
+
+
+
+/* Example of CSS animation for headings */
+/* .feature h3 {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+/* Define styles for the feature container */
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+/* Style for the text content */
+.text-content {
+  flex: 1;
+  padding: 0 20px; /* Adjust padding as needed */
+}
+
+/* Style for the image container */
+.image-container {
+  flex: 0 0 auto;
+  width: 30%; /* Adjust the width as needed */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Style for the image */
+.image-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CSS animation for headings */
+/* .feature h3 {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+} */
+
+/* @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+.feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* we dont need this */
+.feature-content {
+  text-align: center; 
+}
+
+.feature-content h3 {
+  margin-bottom: 40px; /* Add space between h3 and p */
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'open sans light';
+  font-size: 40px;
+  color: #8A8A8A;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+ 
+}
+
+@font-face {
+  font-family: 'open sans light';
+  src: url('../../assets/Open_Sans/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px; /* Adjust as needed */
+    
+}
+
+.image-container img {
+    width: 150px; /* Adjust the width of the images */
+    margin: 0 10px; /* Adjust spacing between images */
+}
+
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0; 
+}
+
+#img1, #img2 {
+  width: 650px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: brightness(1); /* Set brightness to normal */
+}
+
+#img1:hover, #img2:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+#img1 {
+  margin-right: -200px;
+}
+
+#img2 {
+  margin-left: -200px;
+}
+
+
+
+
+.content-2 img {
+  width: 240px; /* Adjust image width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 10px; /* Adjust spacing between images */
+}
+
+
+
+/* Define styles for the feature divider */
+.feature-divider {
+  width: 100%; /* Full width */
+  border: 0.1px solid #e8e6e6;
+  margin-top: 20px; /* Adjust top margin as needed */
+  margin-bottom: 20px; /* Adjust bottom margin as needed */
+}
+
+
+/* =================================================================== */
+
+
+.content1 {
+  background-color: #ffffff;
+  /* background-color: #1976d2; */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 20px; */
+  padding-top: 0px;
+  /* padding-bottom: 30px; */
+  height: 90vh;
+  color: #595959;
+}
+
+
+.size{
+  font-size: 36px;
+  font-family: 'open sans light';
+  color: #8A8A8A;
+}
+
+
+
+/* for 2nd content */
+.feature1{
+
+margin-left: -650px;
+
+}
+
+/* ====================================================== */
+
+/* screenshot adding */
+.content1 {
+  position: relative; /* Ensure relative positioning for absolute positioning of images */
+}
+
+#sc1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 200px; 
+}
+
+#sc2 {
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+  bottom: -370px;
+  margin-bottom: 400px;
+  margin-right: 200px;
+}
+
+#sc1,
+#sc2 {
+  border: 4px solid #8A8A8A; /* Add a border around the images */
+  border-radius: 8px; /* Add border radius for a rounded corner effect */
+  transition: transform 0.3s ease;
+}
+
+#sc1:hover,
+#sc2:hover {
+  transform: scale(1.1); /* Zoom in effect upon hover */
+}
+
+
+
+
+
+
+
+/* ====================================================== */
+/* =================================================================== */
+
+.content2 {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 400px;
+}
+
+.feature2 {
+  display: flex;
+  align-items: center;
+  max-width: 100%; /* Adjust maximum width as needed */
+}
+
+.left-img,
+.right-img {
+  flex: 0 0 auto; /* Prevent images from stretching */
+  
+}
+
+
+.left-img {
+  float: left; /* Adjust margin to move image to the left */
+}
+
+.right-img {
+ float: right; /* Adjust margin to move image to the right */
+}
+
+/* CSS for floating animation */
+.left-img img,
+.right-img img {
+  animation-name: floatAnimation;
+  animation-duration: 3s; /* Adjust animation duration as needed */
+  animation-timing-function: ease-in-out; /* Adjust animation timing function */
+  animation-iteration-count: infinite; /* Make the animation infinite */
+}
+
+/* Define the floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the height of floating */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.text-content {
+  flex: 1;
+  padding-left: 200px;
+  padding-right: 200px;
+  color: #656363;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
+.c-h3{
+  font-family: 'open sans light';
+  text-align: center;
+  font-size: 34px;
+  color: #8A8A8A;
+  padding-bottom: 50px;
+}
+
+
+/* =================================================================== */
+
+
+/* content3 */
+
+  .content3 {
+    background-color: #ffffff;
+    font-size: 16px;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center; 
+    /* flex-direction: column; */
+   
+  }
+  
+
+  .text-content1 {
+    flex: 1;
+    /* padding-left: 40px; */
+    /* padding-right: 200px; */
+    color: #656363;
+    font-size: 20px;
+    margin-top: 20px;
+    /* float: left; */
+    text-align: center;
+  }
+ 
+  
+.cc-h3{
+  font-family: 'open sans light';
+  
+  font-size: 36px;
+  color: #8A8A8A;
+  padding-bottom: 80px;
+  /* margin-right: 800px; */
+  padding-top: 60px;
+}
+
+  .image-con{
+    position: relative; 
+    top: -220px; 
+    margin-left: 950px;
+
+    /* margin-bottom: 150px; */
+   
+  }
+
+  .img2{
+    position: relative; 
+    float: left;
+    
+   top: -500px;
+    /* margin-right: -200px; */
+  }
+  
+
+
+
+  .image-con2{
+    /* position: relative;  */
+    margin-top: -560px;
+   
+    /* margin-right: 950px; */
+    /* margin-bottom: 150px; */
+   
+  }
+
+  /* CSS for floating animation */
+.image-con img,
+.img2 img,
+.image-con2 img {
+  animation-name: floatAnimation;
+  animation-duration: 3s; /* Adjust animation duration as needed */
+  animation-timing-function: ease-in-out; /* Adjust animation timing function */
+  animation-iteration-count: infinite; /* Make the animation infinite */
+}
+
+/* Define the floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the height of floating */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+  
+/* =================================================================== */
+
+.parallax3 {
+  position: relative;
+  background-image: url('../../assets/bp-sticky-notes_cover-s.webp');
+  height: 100vh;
+  /* height: 120vh; */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.723); /* Adjust the alpha value (0.5 for 50% transparency) */
+  opacity: 5; /* Adjust the opacity */
+}
+
+
+
+.parallax4 {
+  position: relative;
+  background-image: url('../../assets/blue\ grid\ sixe\ fiexd-1.png');
+  height: 74vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: parallaxAnimation 4s infinite alternate; /* Add parallax 
+  animation */
+  
+}
+
+@keyframes parallaxAnimation {
+  0% {
+    transform: translateY(-20px); /* Initial position */
+  }
+  100% {
+    transform: translateY(50px); /* Final position */
+  }
+}
+
+.cta-button2 {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  padding: 30px 30px;
+  font-size: 20px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-color: #1976d2; /* Set primary color */
+  color: #fff; /* Text color */
+  border: 2px solid transparent; /* Set transparent border */
+}
+
+.cta-button2::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%; /* Start shine effect from left */
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 70%); /* Change white color for shine effect */
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.cta-button2:hover::before {
+  top: -25%; /* Adjust the shine position */
+  left: 100%; /* Move shine effect to right */
+  animation: shine 1.5s infinite; /* Start shine animation on hover */
+}
+
+@keyframes shine {
+  0% {
+    transform: scale(0.5) translateX(-150%); /* Start with smaller size and move from left */
+  }
+  50% {
+    transform: scale(1.2) translateX(0); /* Grow in size and reach center */
+  }
+  100% {
+    transform: scale(0.5) translateX(150%); /* Shrink back to smaller size and move to right */
+  }
+}
+
+.cta-button2:hover {
+  border-color: #fff; /* Change border color on hover */
+}
+
+.try {
+  position: absolute;
+  top: 40%; /* Adjust vertical positioning as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'open sans light';
+  font-size: 36px;
+  color: #8A8A8A;
+  text-align: center;
+}
+
+  
+/* =================================================================== */
+/* 
+.footerr{
+color: rgb(226, 225, 225);
+} */
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Allow footer-left to grow and take up available space */
+  
+ 
+}
+
+.footer-centre p {
+  margin: 0;
+  color: #bebebe;
+  margin-left: 520px;
+  font-size: 20px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column; /* Stack logo and social icons vertically */
+  align-items: center; /* Center horizontally */
+  margin-right: 35px;
+}
+
+.footer-left{
+  display: flex;
+  flex-direction: column;
+  margin-left: -110rem;
+  /* float: left; */
+  color: #bebebe;
+  font-size: 16px;
+}
+
+
+
+.logo {
+  display: flex;
+  align-items: center; /* Center vertically */
+  margin-right: 40px;
+}
+
+.logo img {
+  width: 45px; /* Adjust logo size as needed */
+  margin-right: 10px; /* Add spacing between logo and name */
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0; /* Remove default margin */
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  margin-right: 25px;
+  margin-top: 35px;
+}
+
+.social-icon i {
+  font-size: 28px;
+  color: rgb(167, 167, 167);
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.social-icon:hover i.fab.fa-instagram {
+  color: #F24556; /* Change color to Instagram red on hover */
+}
+
+.social-icon:hover i.fab.fa-twitter {
+  color: #1DA1F2; /* Original Twitter color */
+}
+
+.social-icon:hover i.fab.fa-linkedin {
+  color: #1DA1F2; /* Same as Twitter color */
+}
+
+.social-icon:hover i.fab.fa-facebook-f {
+  color: #1DA1F2; /* Same as Twitter color */
+}
+
+.social-icon:hover i.fab.fa-youtube {
+  color: #FF0000; /* Red color for YouTube */
+}
+
+
+/* Adjust the styling of social icons as needed */
+
+
+/* =================================================================== */

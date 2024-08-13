@@ -1,0 +1,46 @@
+<div class="outerdiv">
+    <div class="logindiv">
+        <mat-card class="card">
+            <!-- <h2 class="login-heading">Sign In To Your Account</h2> -->
+            <div class="heading-border">
+                <h2 class="login-heading">Sign In To Your Account</h2>
+            </div>
+            <form class="form" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput formControlName="emailId" />
+                        <mat-error *ngIf="loginForm.get('emailId')?.errors?.['required']">Email Address is
+                            required.</mat-error>
+                        <mat-error *ngIf="loginForm.get('emailId')?.errors?.['pattern']">
+                            <span class="error-message">{{ getErrorMessage() }}</span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" [type]="show ? 'text' : 'password'" />
+                        <mat-icon matSuffix (click)="togglePasswordVisibility()">{{show ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
+                        <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password is
+                            required.</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="button">
+                    <button color="primary" mat-raised-button [disabled]="loginForm.invalid" type="submit"
+                        class="sign-in-button">Sign In</button>
+                </div>
+                
+                <p id="alreadyUserSpan">
+                    Don't have an account?&nbsp; &nbsp;
+                    <span (click)="registerRoutefunc()" class="signup-link">Sign Up</span>
+                </p>
+
+            </form>
+        </mat-card>
+    </div>
+    <img src="../../assets/signin.png" alt="Left Image" class="image-left">
+  <img src="../../assets/working.png" alt="Right Image" class="image-right">
+</div>

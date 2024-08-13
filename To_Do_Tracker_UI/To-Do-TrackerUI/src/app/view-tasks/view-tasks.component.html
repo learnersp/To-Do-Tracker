@@ -1,0 +1,211 @@
+<div class="bg">
+  <app-search (searchs)="search($event)"></app-search>
+  <span class="heading">
+    <h2><strong style="border-bottom: solid 3px white; background-color: rgb(20, 55, 121); padding: 10px 15px;">All
+        Tasks</strong></h2>
+  </span>
+  <span class="prioritySpan">
+    <mat-card class="priorityCard">
+      <strong>Task Priority Level</strong>
+      <mat-chip-listbox>
+        <mat-chip-option id="lowChip" (click)="getTaskPrioritywise('Low')">Low</mat-chip-option>
+        <mat-chip-option id="mediumChip" (click)="getTaskPrioritywise('Medium')">Medium</mat-chip-option>
+        <mat-chip-option id="highChip" (click)="getTaskPrioritywise('High')">High</mat-chip-option>
+        <mat-chip-option id="urgentChip" (click)="getTaskPrioritywise('Urgent')">Urgent</mat-chip-option>
+        <mat-chip-option (click)="getAllTask()">All</mat-chip-option>
+      </mat-chip-listbox>
+    </mat-card>
+  </span>
+
+
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let note of notes$">
+
+      <mat-card (mouseenter)="buttonVisibility()" (mouseleave)="onMouseLeave()" class="card"
+        [ngClass]="'light-' + note.taskPriorityLevel.toLowerCase()">
+
+
+        <mat-card-header>
+          <span class="headerMid">
+            <!-- <mat-card-title style="color: black;"> {{ note.taskName }}</mat-card-title> -->
+            <!-- <div class="taskName">{{ note.taskName }}</div>  -->
+            <div class="taskName" [ngClass]="getPriorityClassName(note.taskPriorityLevel)">
+              {{ note.taskName }}
+            </div>
+
+            <!-- <mat-card-subtitle style="color: black;"> {{note.taskCategory}}</mat-card-subtitle> -->
+          </span>
+
+          <span class="headerRight">
+            <mat-card-title-group>
+
+              <!-- <ng-container [ngSwitch]="note.taskPriorityLevel">
+            <ng-container *ngSwitchCase="'Critical'">
+              
+              <mat-icon color="warn" style="float: right ;" aria-hidden="false" aria-label="Example home icon"
+                fontIcon="gpp_maybe" (click)="refresh(note.taskPriorityLevel)" ></mat-icon>
+                
+                
+            </ng-container> -->
+              <!-- <ng-container *ngSwitchCase="'High'">
+              <mat-icon color="warn" aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_circle_up" (click)="refresh(note.taskPriorityLevel)">
+              </mat-icon>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Low'">
+              <mat-icon color="primary" aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_circle_down" (click)="refresh(note.taskPriorityLevel)">
+              </mat-icon>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Medium'">
+              <mat-icon color="accent" aria-hidden="false" aria-label="Example home icon" (click)="refresh(note.taskPriorityLevel)"
+                fontIcon="remove_circle_outline"></mat-icon>
+            </ng-container>
+            <ng-container *ngSwitchDefault>Code Default</ng-container> -->
+              <!-- </ng-container> -->
+            </mat-card-title-group>
+          </span>
+
+        </mat-card-header>
+
+        <!-- <mat-divider style="color: black;"></mat-divider><br> -->
+
+        <!-- Task Content -->
+        <!-- <mat-card-content>
+          <p style="color: black;">{{ note.taskContent }}</p>
+        </mat-card-content> -->
+
+        <!-- <mat-card-content>
+          
+          <ng-container *ngIf="note.taskContent.includes('<ul>')">
+           
+            <ul [innerHTML]="note.taskContent"></ul>
+          </ng-container>
+          
+          <ng-container *ngIf="!note.taskContent.includes('<ul>')">
+            
+            <p *ngFor="let paragraph of note.taskContent.split('\n')">{{ paragraph }}</p>
+          </ng-container>
+        </mat-card-content>
+
+        <mat-divider style="color: black;"></mat-divider> -->
+
+        <!-- for showing extra to view full content of the card -->
+        <mat-card-content (click)="showFullContent(note)" class="card-content">
+          <!-- Check if taskContent contains a list -->
+          <ng-container *ngIf="note.taskContent.includes('<ul>')">
+            <!-- Render content as a list -->
+            <ul [innerHTML]="note.taskContent"></ul>
+          </ng-container>
+          <!-- Check if taskContent contains a paragraph -->
+          <ng-container *ngIf="!note.taskContent.includes('<ul>')">
+            <!-- Render content as separate paragraphs -->
+            <p *ngFor="let paragraph of note.taskContent.split('\n')">{{ paragraph }}</p>
+          </ng-container>
+        </mat-card-content>
+
+        <!-- Add ngIf directive to conditionally display full content -->
+        <mat-card *ngIf="showFullCardContent" class="full-card" [ngClass]="selectedCardColor">
+          <!-- Full card content -->
+          <!-- Add button to close the full card content -->
+          <button mat-icon-button (click)="closeFullContent()" class="close-button">
+            <mat-icon style="color: rgb(0, 115, 255);">close</mat-icon>
+          </button>
+          <mat-card-content>
+            <!-- Display full content -->
+            <!-- Check if content is a list -->
+            <ng-container *ngIf="fullCardContent.includes('<ul>')">
+              <!-- Render content as a list -->
+              <ul [innerHTML]="fullCardContent"></ul>
+            </ng-container>
+            <!-- Check if content is paragraphs -->
+            <ng-container *ngIf="!fullCardContent.includes('<ul>')">
+              <!-- Render content as separate paragraphs -->
+              <div [innerHTML]="fullCardContent"></div>
+            </ng-container>
+          </mat-card-content>
+        </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- card footer  -->
+        <div class="footer">
+          <!-- <mat-card-subtitle style="color: black;"> {{note.taskCategory}}</mat-card-subtitle> -->
+          <!-- Work or personal icon based on task category -->
+          <!-- HTML -->
+          <!-- HTML -->
+          <div class="custom-chip">
+            <mat-icon class="custom-icon">
+              <ng-container *ngIf="note.taskCategory === 'Work'">
+                work
+              </ng-container>
+              <ng-container *ngIf="note.taskCategory === 'Personal'">
+                person
+              </ng-container>
+            </mat-icon>
+            <span class="custom-span">{{ note.taskCategory }}</span>
+          </div>
+
+
+          <div class="button">
+
+            <!-- date time mat-chip  -->
+            <mat-chip id="chip" class="date" style="color: black;"><strong
+                style="color: black;">{{note.taskDeadline}}</strong></mat-chip>
+
+            <!-- <button *ngIf="isHovered" mat-icon-button color="primary" (click)="update1(note.taskName)"
+              aria-label="Example icon button with a home icon">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button *ngIf="isHovered" mat-icon-button color="primary" (click)="update(note.taskName)"
+              aria-label="Example icon button with a home icon">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button *ngIf="isHovered" mat-icon-button color="warn" (click)="delete(note)"
+              aria-label="Example icon button with a home icon">
+              <mat-icon>delete</mat-icon>
+            </button> -->
+
+            <button mat-icon-button [matMenuTriggerFor]="optionsMenu" aria-label="Menu" class="menu-button">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #optionsMenu="matMenu" yPosition="above" class="custom-menu">
+
+              <button mat-menu-item (click)="update1(note.taskName)">
+                <mat-icon style="color: rgb(68, 188, 35);">check</mat-icon>
+                <span>Check</span>
+              </button>
+              <button mat-menu-item (click)="update(note.taskName)">
+                <mat-icon style="color: rgb(88, 140, 219);">edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="delete(note)">
+                <mat-icon style="color: rgb(225, 74, 74);">delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+
+
+      </mat-card>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="card" (click)="add()">
+        <span id="addicon">
+          <mat-icon class="addIcon" style="color: black;">add_circle_outline</mat-icon>
+        </span>
+      </mat-card>
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+</div>

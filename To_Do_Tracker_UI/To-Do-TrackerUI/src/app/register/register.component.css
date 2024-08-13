@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* .heading-border{  
+} */
+
+.custom-color-border {
+  border-radius: 10px; 
+  margin-bottom: -8px;
+  margin-top: -20px;
+  margin-left: -20px; /* Adjusted margin-left */
+  margin-right: -20px; /* Adjusted margin-right */
+  /* padding: 0px;  */
+  background-color: #1C356A;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+h2 {
+  color: white;
+  font-size: 22px; /* Adjust font size as needed */
+  text-align: center; /* Center text horizontally */
+  padding-top: 18px;
+  padding-bottom: 5px;
+}
+
+
+.card {
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px; /* Added border-radius */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  border-radius: 10px; /* Added border-radius */
+  padding: 12px;
+}
+
+mat-label {
+  color: #555;
+}
+
+.upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.upload-label span {
+  margin-left: 10px;
+}
+
+.already-user {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.password-show-button {
+  display: block;
+  text-align: center;
+}
+
+/* button {
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px; 
+  cursor: pointer;
+  background-color: #007bff; 
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; 
+} */
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px; /* Adjust margin top */
+  margin-bottom: 0px; /* Adjust margin bottom */
+}
+
+.sign-up-button {
+  width: 100%; /* Stretch button to left and right */
+  padding: 20px 20px; /* Add padding to the top and bottom */
+  position: relative; /* Position relative for pseudo-element */
+  overflow: hidden; /* Hide overflowing pseudo-element */
+}
+
+.sign-up-button::before {
+  content: ""; /* Add pseudo-element */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Initial position off the button */
+  width: 100%; /* Initial width */
+  height: 100%;
+  background-color: #1C356A; /* Loading bar color */
+  transition: left 0.7s ease-in-out; /* Smooth transition for left movement */
+}
+
+.sign-up-button:hover::before {
+  left: 0; /* Move pseudo-element to the left (show loading bar) */
+}
+
+/* Disable pointer events on button when disabled */
+.sign-up-button:disabled::before {
+  display: none; /* Hide loading bar when button is disabled */
+}
+
+
+
+
+/* sign in link  */
+#alreadyUserSpan {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signin-link {
+  cursor: pointer;
+}
+
+.signin-link a {
+  color: #1C356A;
+  font-weight: 400; /* Adjust font weight as needed */
+  transition: background-color 0.3s;
+  font-size: 16px
+}
+
+.signin-link a:hover {
+  background-color: #1C356A;
+  color: #FFFFFF;
+  padding: 9px 15px;
+  border-radius: 4px;
+}
+
+.existing-user {
+  font-weight: 425; /* Adjust font weight for "Existing user?" */
+  font-size: 18px;
+  padding-right: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+a {
+  color: #007bff; /* Changed link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+@keyframes signup-heading-animation {
+  0%, 50% {
+      opacity: 0;
+  }
+  55%, 100% {
+      opacity: 1;
+  }
+}
+
+#welcome-heading, #signup-heading {
+  text-align: center;
+  animation: signup-heading-animation 4s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.card.slide-up {
+  animation: slideUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 5;
+  }
+}
+
+
+
+/* upload image css */
+.image-upload-container {
+  text-align: center;
+  /* margin-bottom: 20px; */
+  padding-bottom: 50px;
+}
+
+.uploaded-image {
+  width: 125px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto; /* Center the image horizontally */
+  position: relative; /* Relative positioning for the container */
+}
+
+.uploaded-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #184e94;
+  border: 2px solid #2772ce;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px; /* Adjust spacing between upload button and uploaded image */
+}
+
+.upload-label span {
+  margin-top: 5px;
+  color: #555;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.upload-label:hover {
+  background-color: #1f5ea1;
+}
+
+
+/* ========================================================================================================================== */
+
+/* upload buttons css */
+
+/* Style the Upload Image button */
+.upload-button {
+  display: inline-block; /* Change display property to inline-block */
+  margin-top: 20px; /* Add margin to the top */
+  padding: 15px 30px; /* Add padding to the button */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  background-color: #1f5ea1; 
+  color: #ffff; 
+  font-size: 18px; /* Set font size */
+  cursor: pointer; /* Set cursor to pointer */
+  transition: background-color 0.3s; /* Add transition effect */
+  position: relative; /* Add relative positioning */
+}
+
+.upload-button i {
+  margin-right: 5px; /* Add space between icon and text */
+}
+
+.upload-button span {
+  vertical-align: middle; /* Align text vertically with the icon */
+}
+
+.upload-button:hover {
+  background-color: #184e94; /* Change background color on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.upload-button:hover i {
+  transform: scale(1.1); /* Increase icon size on hover */
+}
+
+
+/* =========================================================================================== */
+
+/* change profile button css  */
+
+/* Style for the "Change Profile" button */
+/* Style for the "Change Profile" button */
+.change-image-button {
+  display: inline-block; /* Change display property to inline-block */
+  margin-top: 10px; /* Add margin to the top */
+  /* padding: 10px 20px;  */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  background-color: #1f5ea1; /* Set background color */
+  color: #fff; /* Set text color */
+  font-size: 16px; /* Set font size */
+  cursor: pointer; /* Set cursor to pointer */
+  transition: background-color 0.3s; /* Add transition effect */
+  position: relative; /* Add relative positioning */
+  width: 100%;
+}
+
+/* Add padding between image and button */
+/* to profile image size decrease or increase this - width and height  */
+.uploaded-image {
+  width: 135px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto; /* Center the image horizontally */
+  position: relative; /* Relative positioning for the container */
+  padding-bottom: 0px; /* Add padding between image and button */
+}
+
+.uploaded-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Your existing CSS */
+
+
+
+
+/* Your existing CSS */
+
+.outerdiv {
+  background: linear-gradient(120deg, #1C356A, #507AAD, #78A8D4, #A4C1E1, #c1cee9, #EFF2F7); /* Gradient colors */
+  background-size: 700% 100%; /* Adjust background size for animation */
+  animation: gradient-animation 15s linear infinite; /* Adjust animation duration */
+}
+
+
+/* Adjust animation to smoothly shift gradient colors */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Your existing CSS */
+
+/* Adjust the paths and sizing of the images */
+.image-left {
+  position: fixed;
+  left: -450px; /* Adjust the left positioning */
+  bottom: 620px; /* Adjust the bottom positioning */
+  width: 300px; /* Adjust the width */
+  opacity: 1; /* Adjust the opacity */
+  animation: float-animation 3s ease-in-out infinite; /* Animation */
+}
+
+.image-right {
+  position: fixed;
+  right: -480px; /* Adjust the right positioning */
+  bottom: 10px; /* Adjust the bottom positioning */
+  width: 350px; /* Adjust the width */
+  opacity: 1; /* Adjust the opacity */
+  animation: float-animation 3s ease-in-out infinite; /* Animation */
+}
+
+/* Animation for floating effect */
+@keyframes float-animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the floating distance */
+  }
+}
+
+/* Your existing CSS */

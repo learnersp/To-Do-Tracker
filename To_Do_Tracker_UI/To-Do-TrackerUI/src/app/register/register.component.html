@@ -1,0 +1,108 @@
+<div class="outerdiv">
+    <mat-card class="card" class="card slide-up">
+        <div class="custom-color-border">
+            <h2>Sign Up To Your Account</h2>
+        </div>
+    
+        <div class="form-container">
+            <form class="form" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+                <fieldset class="backcolor">
+    
+                    <!-- <div id="imageUpload">
+                        <label for="upload" class="upload-label">
+                            <mat-icon id="icon">account_circle</mat-icon>
+                            <span>Upload Photo</span>
+                        </label>
+                        <input type="file" (change)="onFileSelect($event)" id="upload">
+                    </div> -->
+    
+    
+                    <div id="imageUpload" class="image-upload-container">
+                        <input type="file" (change)="onFileSelect($event)" id="upload" style="display: none;">
+                        <!-- Display uploaded image -->
+                        <div class="uploaded-image" *ngIf="fileUrl">
+                            <img [src]="fileUrl" alt="Uploaded Image">
+                            <button class="change-image-button" (click)="triggerFileInput($event)">Change Profile</button>
+                        </div>
+                        <button class="upload-button" *ngIf="!fileUrl" (click)="triggerFileInput($event)">
+                            <i class="fa-solid fa-upload"></i> <!-- Add space between icon and button -->
+                            <span>Upload Profile</span>
+                        </button>
+                    </div>
+                    
+                    
+                    
+    
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" />
+                        <mat-error *ngIf="firstName?.errors?.['required']">First Name is required.</mat-error>
+                        <mat-error *ngIf="firstName?.errors?.['minlength'] && !firstName?.errors?.['noSpaces']">
+                          First Name should have minimum of 2 characters.
+                        </mat-error>
+                        <mat-error *ngIf="firstName?.errors?.['noSpaces'] ">
+                          First Name should not contain spaces.
+                        </mat-error>
+                        <mat-error
+                          *ngIf="firstName?.errors?.['noNumbers'] "
+                        >
+                          Do not enter Numeric values
+                        </mat-error>
+                        <mat-error
+                          *ngIf="firstName?.errors?.['noSpecialChars'] "
+                        >
+                          Do not enter Special character.
+                        </mat-error>
+                      </mat-form-field>
+                      
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName" />
+                        <mat-error *ngIf="lastName?.errors?.['required']">Last Name is required.</mat-error>
+                        <mat-error *ngIf="lastName?.errors?.['minlength']">Last Name should have minimum of 2
+                            characters.</mat-error>
+                        <mat-error *ngIf="lastName?.errors?.['noNumbers']">Do not enter Numeric values</mat-error>
+                        <mat-error *ngIf="lastName?.errors?.['noSpaces']">Last Name should not contain spaces.</mat-error>
+                        <mat-error *ngIf="lastName?.errors?.['noSpecialChars']">Do not enter Special character.</mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput formControlName="emailId" />
+                        <mat-error *ngIf="emailId?.errors?.['required']">Email Id is required.</mat-error>
+                        <mat-error *ngIf="emailId?.errors?.['pattern']">{{ getErrorMessage() }}</mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" [type]="show ? 'text' : 'password'" />
+                        <mat-icon matSuffix (click)="togglePasswordVisibility()">{{show ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
+                        <mat-error *ngIf="password?.errors?.['required']">Password is required.</mat-error>
+                        <mat-error *ngIf="password?.errors?.['pattern']">Password should have at least 8 characters with at
+                            least one symbol, upper and lower case letters, and a number.</mat-error>
+                    </mat-form-field>
+    
+                    <div class="button">
+                        <button color="primary" mat-button mat-raised-button [disabled]="!registerForm.valid" type="submit"
+                            class="sign-up-button">Sign
+                            Up</button>
+                    </div>
+    
+                    <img src="../../assets/signup 2.webp" alt="Left Image" class="image-left">
+                    <img src="../../assets/register-removebg-preview.png" alt="Right Image" class="image-right">
+                </fieldset>
+            </form>
+        </div>
+    
+        <p id="alreadyUserSpan">
+            <span class="signin-link">
+                <span class="existing-user">Existing user?</span>
+                <a (click)="registerRoutefunc()">Sign In</a>
+            </span>
+        </p>
+    
+    </mat-card>
+    </div>

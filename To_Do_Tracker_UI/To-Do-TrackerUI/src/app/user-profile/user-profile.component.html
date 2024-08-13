@@ -1,0 +1,43 @@
+<div class="bg">
+<div class="example-card" *ngIf="userId!=null">
+
+    
+    <span class="headerSpan">
+        <h1><strong>My Profile</strong></h1>
+    </span><br><br>
+    <span *ngIf="userDetail.img!=null" >
+        <img [src]="'data:image/jpeg;base64,'+userDetail.img" >
+        
+    </span>
+    
+    <span *ngIf="userDetail.img==null">
+        <img src="https://www.w3schools.com/w3images/avatar2.png"  >
+    </span><br>
+    <mat-card-title class="detail">Name:&nbsp; {{userDetail.firstName}}&nbsp;{{userDetail.lastName}}</mat-card-title><br>
+    <mat-card-subtitle >EmailId:&nbsp;{{userDetail.emailId}}  </mat-card-subtitle>
+
+    <a mat-list-item (click)="logOutFunc()">
+    <mat-chip class="mat-chip"><mat-icon >power_settings_new</mat-icon></mat-chip></a>
+
+
+</div>
+
+
+<div class="example-card" *ngIf="userId==null">
+
+
+    <span class="headerSpan">
+        <h1><strong>My Profile</strong></h1>
+    </span><br><br>
+    <span >
+        <!-- <img src="https://cdn.vectorstock.com/i/preview-1x/82/99/no-image-available-like-missing-picture-vector-43938299.jpg"  > -->
+    </span><br><br>
+    <mat-card-title class="detail">Name:&nbsp; No records</mat-card-title><br><br>
+    <!-- <mat-card-subtitle class="detail">Role:&nbsp;&nbsp;&nbsp;No records</mat-card-subtitle><br><br> -->
+    <mat-card-subtitle class="detail">EmailId:&nbsp;No records  </mat-card-subtitle>
+
+
+
+</div>
+</div>
+

@@ -1,0 +1,35 @@
+<!-- <div>
+    <mat-form-field style="width: 25%;" class="example-full-width" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput [formControl]="searchControl" id="searchquery">
+    </mat-form-field>
+  
+    <span>
+      <button mat-icon-button color="primary" (click)="search()" class="btn btn-primary">
+        <mat-icon class="icon">search</mat-icon>
+      </button>
+    </span>
+  </div> -->
+
+  <div>
+    <mat-form-field style="width: 25%;" class="example-full-width" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput [(ngModel)]="searchText" id="searchquery" (input)="search()">
+    </mat-form-field> 
+  
+    <span>
+      <button mat-icon-button color="primary" (click)="search()" class="btn btn-primary">
+        <mat-icon class="icon">search</mat-icon>
+      </button>
+    </span> 
+  </div>
+  <div>
+    <!-- <div class="search-container">
+      <input type="text" [(ngModel)]="searchText" id="searchquery" class="search-input" placeholder="Search...">
+      <button mat-icon-button color="primary" (click)="search()" class="search-button">
+        <mat-icon class="icon">search</mat-icon>
+      </button>
+    </div>
+  </div> -->
+  
+  
